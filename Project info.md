@@ -5,6 +5,7 @@
 **ResumeAI** is a comprehensive full-stack web application that enables users to create professional resumes with AI-powered analysis and multiple export formats. The application features a dual-backend architecture with sophisticated template systems and real-time collaboration capabilities.
 
 ### **Core Value Proposition:**
+
 - ✅ **AI-Powered Resume Analysis** using Google Gemini Pro
 - ✅ **Professional Template Library** (11+ templates)
 - ✅ **Real-time Preview & Editing**
@@ -17,6 +18,7 @@
 ## 🛠️ **Technology Stack**
 
 ### **Frontend Stack:**
+
 ```json
 {
   "framework": "React 18",
@@ -32,6 +34,7 @@
 ```
 
 ### **Backend Stack (Primary - Node.js):**
+
 ```json
 {
   "runtime": "Node.js",
@@ -46,6 +49,7 @@
 ```
 
 ### **Backend Stack (AI/ML - Python):**
+
 ```json
 {
   "runtime": "Python 3.11+",
@@ -65,6 +69,7 @@
 ## 📁 **Project Architecture & File Structure**
 
 ### **Root Level:**
+
 ```
 resumebuilder/
 ├── client/                     # React Frontend
@@ -80,6 +85,7 @@ resumebuilder/
 ```
 
 ### **Frontend Structure (client/):**
+
 ```
 client/
 ├── pages/                      # Route Components
@@ -131,6 +137,7 @@ client/
 ```
 
 ### **Node.js Backend Structure (server/):**
+
 ```
 server/
 ├── routes/                     # API Endpoints
@@ -157,6 +164,7 @@ server/
 ```
 
 ### **Python Backend Structure (python_backend/):**
+
 ```
 python_backend/
 ├── services/                   # AI/ML Services
@@ -175,6 +183,7 @@ python_backend/
 ## 🗄️ **Database Schema (MongoDB)**
 
 ### **Users Collection:**
+
 ```json
 {
   "_id": "ObjectId",
@@ -189,6 +198,7 @@ python_backend/
 ```
 
 ### **Resumes Collection:**
+
 ```json
 {
   "_id": "ObjectId",
@@ -206,41 +216,51 @@ python_backend/
       "website": "string"
     },
     "summary": "string",
-    "education": [{
-      "id": "string",
-      "institution": "string",
-      "degree": "string",
-      "field": "string",
-      "startDate": "string",
-      "endDate": "string",
-      "gpa": "string"
-    }],
-    "experience": [{
-      "id": "string",
-      "company": "string",
-      "position": "string",
-      "startDate": "string",
-      "endDate": "string",
-      "current": "boolean",
-      "description": "string"
-    }],
-    "skills": [{
-      "id": "string",
-      "name": "string",
-      "level": "Beginner|Intermediate|Advanced|Expert"
-    }],
-    "certifications": [{
-      "id": "string",
-      "name": "string",
-      "issuer": "string",
-      "date": "string"
-    }],
-    "projects": [{
-      "id": "string",
-      "name": "string",
-      "description": "string",
-      "technologies": "array"
-    }]
+    "education": [
+      {
+        "id": "string",
+        "institution": "string",
+        "degree": "string",
+        "field": "string",
+        "startDate": "string",
+        "endDate": "string",
+        "gpa": "string"
+      }
+    ],
+    "experience": [
+      {
+        "id": "string",
+        "company": "string",
+        "position": "string",
+        "startDate": "string",
+        "endDate": "string",
+        "current": "boolean",
+        "description": "string"
+      }
+    ],
+    "skills": [
+      {
+        "id": "string",
+        "name": "string",
+        "level": "Beginner|Intermediate|Advanced|Expert"
+      }
+    ],
+    "certifications": [
+      {
+        "id": "string",
+        "name": "string",
+        "issuer": "string",
+        "date": "string"
+      }
+    ],
+    "projects": [
+      {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "technologies": "array"
+      }
+    ]
   },
   "createdAt": "Date",
   "updatedAt": "Date"
@@ -248,6 +268,7 @@ python_backend/
 ```
 
 ### **Resume Analyses Collection (Python Backend):**
+
 ```json
 {
   "_id": "ObjectId",
@@ -272,6 +293,7 @@ python_backend/
 ## 🔗 **API Endpoints**
 
 ### **Authentication Endpoints (Node.js):**
+
 ```
 POST   /api/auth/register        # User Registration
 POST   /api/auth/login           # User Login
@@ -279,6 +301,7 @@ GET    /api/auth/profile         # Get User Profile (Protected)
 ```
 
 ### **Resume Management Endpoints (Node.js):**
+
 ```
 POST   /api/resumes              # Create Resume (Protected)
 GET    /api/resumes              # Get User Resumes (Protected)
@@ -288,6 +311,7 @@ DELETE /api/resumes/:id          # Delete Resume (Protected)
 ```
 
 ### **PDF Generation Endpoints (Node.js):**
+
 ```
 POST   /api/pdf/generate-custom  # Generate PDF (Protected)
 GET    /api/pdf/download/:filename # Download PDF (Protected)
@@ -295,6 +319,7 @@ POST   /api/pdf/cleanup          # Cleanup Old PDFs (Protected)
 ```
 
 ### **AI Analysis Endpoints (Node.js):**
+
 ```
 POST   /api/analyze-resume       # Upload & Analyze Resume
 GET    /api/test-analysis        # AI Service Health Check
@@ -302,6 +327,7 @@ POST   /api/test-ai              # Test AI Analysis
 ```
 
 ### **AI Analysis Endpoints (Python):**
+
 ```
 POST   /api/resume/upload        # Upload & Analyze with Gemini AI (Protected)
 GET    /api/resume/analyze/:id   # Get Analysis Results (Protected)
@@ -314,6 +340,7 @@ GET    /api/health               # Health Check
 ## ⚡ **Key Features & Functionality**
 
 ### **1. Resume Builder Interface:**
+
 - ✅ **Multi-section Form System** (Personal, Education, Experience, Skills, etc.)
 - ✅ **Real-time Auto-save** with debounced updates
 - ✅ **Live Template Preview** in sidebar or modal
@@ -322,6 +349,7 @@ GET    /api/health               # Health Check
 - ✅ **Sample Data Loading** for quick testing
 
 ### **2. Template System:**
+
 ```javascript
 Templates Available:
 ├── Modern (Gradient + Professional)
@@ -338,6 +366,7 @@ Templates Available:
 ```
 
 ### **3. AI-Powered Analysis:**
+
 - ✅ **Google Gemini Pro Integration** for intelligent scoring
 - ✅ **Resume Parsing** using NLTK and advanced NLP
 - ✅ **Real-time Scoring** with category breakdown
@@ -346,6 +375,7 @@ Templates Available:
 - ✅ **Keyword Analysis** and optimization
 
 ### **4. PDF Generation System:**
+
 - ✅ **Template-specific Styling** with dynamic CSS
 - ✅ **Puppeteer-based Rendering** for high-quality output
 - ✅ **Professional Typography** matching template designs
@@ -353,6 +383,7 @@ Templates Available:
 - ✅ **Print-optimized Styling** with proper margins
 
 ### **5. User Management:**
+
 - ✅ **JWT Authentication** with secure token handling
 - ✅ **User Registration/Login** with validation
 - ✅ **Protected Routes** for authenticated features
@@ -364,6 +395,7 @@ Templates Available:
 ## 🔄 **Application Flow & User Journey**
 
 ### **1. User Onboarding:**
+
 ```
 Landing Page (GoogleIndex.jsx)
     ↓ User clicks "Get Started"
@@ -375,6 +407,7 @@ Builder Interface (Builder.jsx)
 ```
 
 ### **2. Resume Building Process:**
+
 ```
 Builder Page Load
     ↓ Initialize empty resume state
@@ -393,6 +426,7 @@ Save Draft
 ```
 
 ### **3. PDF Generation Flow:**
+
 ```
 User clicks "Download PDF"
     ↓ Frontend validation
@@ -410,6 +444,7 @@ Frontend download
 ```
 
 ### **4. AI Analysis Flow:**
+
 ```
 Resume data changes
     ↓ Debounced trigger (1 second)
@@ -428,26 +463,29 @@ Score display update
 ## 🔧 **Development Workflow**
 
 ### **Development Commands:**
-```bash
-# Install dependencies
+
+1. Install the Python 3.11 version file (select the add to path option while installing).
+
+2. Run a command (frontend).
+
 npm install
 
-# Start integrated development server (Frontend + Node.js Backend)
-npm run dev                     # Runs on http://localhost:8080
+npm run dev
 
-# Start Python backend separately
-cd python_backend
-pip install -r requirements.txt
-python app.py                   # Runs on http://localhost:5000
+3. Run the command in the 2nd terminal (backend).
 
-# Build for production
-npm run build
+i. cd fastapi-backend
 
-# Run tests
-npm test
-```
+ii. py -3.11 -m venv venv
+
+iii. \venv\Scripts\activate (if you see this line (venv) PS C:\Users\patel\Downloads\, then it's done)
+
+iv. pip install -r requirements.txt
+
+v. python main.py
 
 ### **Environment Variables:**
+
 ```env
 # Node.js Backend (.env)
 SECRET_KEY=your-secret-key
@@ -463,6 +501,7 @@ GEMINI_API_KEY=your-gemini-api-key
 ```
 
 ### **Key Development Features:**
+
 - ✅ **Hot Reload** for both frontend and backend
 - ✅ **Single Port Development** (8080) with proxy
 - ✅ **Integrated Error Handling** with toast notifications
@@ -474,6 +513,7 @@ GEMINI_API_KEY=your-gemini-api-key
 ## 🚀 **Deployment Architecture**
 
 ### **Recommended Deployment Stack:**
+
 ```
 Frontend: Netlify/Vercel (Static SPA)
 Node.js Backend: Railway/Render/Heroku
@@ -484,6 +524,7 @@ CDN: Cloudflare (for global distribution)
 ```
 
 ### **Production Build Process:**
+
 ```bash
 # Frontend build
 npm run build:client       # Generates dist/spa/
@@ -496,6 +537,7 @@ npm start                  # Runs dist/server/node-build.mjs
 ```
 
 ### **Docker Configuration:**
+
 ```dockerfile
 # Node.js Backend
 FROM node:18-alpine
@@ -521,6 +563,7 @@ CMD ["python", "app.py"]
 ## 🔌 **Key Integrations**
 
 ### **1. Google Gemini AI Integration:**
+
 ```python
 # GeminiService (python_backend/services/gemini_service.py)
 class GeminiService:
@@ -530,6 +573,7 @@ class GeminiService:
 ```
 
 ### **2. PDF Generation Integration:**
+
 ```javascript
 // PDFGenerator (server/services/pdfGenerator.js)
 class PDFGenerator:
@@ -540,13 +584,14 @@ class PDFGenerator:
 ```
 
 ### **3. Real-time Scoring Integration:**
+
 ```javascript
 // Builder.jsx - Auto-scoring system
 useEffect(() => {
-    const timer = setTimeout(() => {
-        calculateResumeScore();
-    }, 1000); // Debounced updates
-    return () => clearTimeout(timer);
+  const timer = setTimeout(() => {
+    calculateResumeScore();
+  }, 1000); // Debounced updates
+  return () => clearTimeout(timer);
 }, [resumeData]);
 ```
 
@@ -555,12 +600,14 @@ useEffect(() => {
 ## 📊 **Performance Metrics**
 
 ### **Frontend Performance:**
+
 - ✅ **First Contentful Paint**: < 1.5s
 - ✅ **Largest Contentful Paint**: < 2.5s
 - ✅ **Time to Interactive**: < 3s
 - ✅ **Bundle Size**: < 500KB (gzipped)
 
 ### **Backend Performance:**
+
 - ✅ **API Response Time**: < 200ms average
 - ✅ **PDF Generation**: < 3s for complex templates
 - ✅ **AI Analysis**: < 5s with Gemini Pro
@@ -571,12 +618,14 @@ useEffect(() => {
 ## 🛡️ **Security Features**
 
 ### **Authentication & Authorization:**
+
 - ✅ **JWT Token Authentication** with secure headers
 - ✅ **Password Hashing** with bcryptjs
 - ✅ **Protected Routes** with middleware validation
 - ✅ **CORS Configuration** for cross-origin requests
 
 ### **Data Protection:**
+
 - ✅ **Input Validation** with Zod schemas
 - ✅ **SQL Injection Protection** with MongoDB ODM
 - ✅ **XSS Prevention** with React's built-in protection
@@ -587,6 +636,7 @@ useEffect(() => {
 ## 🔍 **Troubleshooting & Common Issues**
 
 ### **1. Gemini API Quota Exceeded:**
+
 ```
 Error: 429 Too Many Requests - Quota exceeded
 Solution: Upgrade Gemini API plan or implement fallback scoring
@@ -594,6 +644,7 @@ Location: python_backend/services/gemini_service.py
 ```
 
 ### **2. PDF Template Not Applied:**
+
 ```
 Issue: PDF always uses default template
 Cause: Template parameter not properly passed
@@ -601,6 +652,7 @@ Fix: Ensure selectedTemplate state is sent in PDF request
 ```
 
 ### **3. Authentication Issues:**
+
 ```
 Issue: JWT token expired or invalid
 Solution: Implement token refresh mechanism
@@ -608,6 +660,7 @@ Location: client/contexts/AuthContext.jsx
 ```
 
 ### **4. Database Connection Errors:**
+
 ```
 Issue: MongoDB connection timeout
 Solution: Check MONGO_URI environment variable
@@ -619,6 +672,7 @@ Verify MongoDB Atlas network access
 ## 📈 **Future Enhancements**
 
 ### **Planned Features:**
+
 - 🔄 **Real-time Collaboration** with WebSocket integration
 - 📱 **Mobile App** with React Native
 - 🌐 **Multi-language Support** with i18n
@@ -628,6 +682,7 @@ Verify MongoDB Atlas network access
 - 🤖 **Enhanced AI Features** with GPT-4 integration
 
 ### **Technical Improvements:**
+
 - ⚡ **Performance Optimization** with React 18 features
 - 🏗️ **Microservices Architecture** with container orchestration
 - 🔒 **Enhanced Security** with OAuth2 integration
@@ -639,12 +694,14 @@ Verify MongoDB Atlas network access
 ## 📞 **Support & Documentation**
 
 ### **Development Team Contacts:**
+
 - **Frontend Lead**: React/TypeScript specialist
 - **Backend Lead**: Node.js/Express expert
 - **AI/ML Engineer**: Python/Gemini AI specialist
 - **DevOps Engineer**: Deployment and infrastructure
 
 ### **Documentation Links:**
+
 - **API Documentation**: `/docs/api`
 - **Component Library**: `/docs/components`
 - **Deployment Guide**: `/docs/deployment`
@@ -655,10 +712,13 @@ Verify MongoDB Atlas network access
 ## 📝 **Project Status**
 
 ### **Current Version**: v1.0.0
+
 ### **Last Updated**: January 2025
+
 ### **Status**: Production Ready ✅
 
 ### **Feature Completion:**
+
 - ✅ **Core Resume Builder** (100%)
 - ✅ **Template System** (100%)
 - ✅ **PDF Generation** (100%)
