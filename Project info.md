@@ -464,25 +464,18 @@ Score display update
 
 ### **Development Commands:**
 
-1. Install the Python 3.11 version file (select the add to path option while installing).
+run frontend :-
 
-2. Run a command (frontend).
+1.npm install
+2.npm run dev
 
-npm install
+backend run (ML):-
 
-npm run dev
-
-3. Run the command in the 2nd terminal (backend).
-
-i. cd fastapi-backend
-
-ii. py -3.11 -m venv venv
-
-iii. \venv\Scripts\activate (if you see this line (venv) PS C:\Users\patel\Downloads\, then it's done)
-
-iv. pip install -r requirements.txt
-
-v. python main.py
+1.⁠ ⁠cd python_backend
+2.⁠ ⁠py -3.11 -m venv venv
+3.⁠ ⁠venv\Scripts\activate
+4.⁠ ⁠pip install -r requirements.txt
+5.⁠ ⁠python app.py
 
 ### **Environment Variables:**
 
