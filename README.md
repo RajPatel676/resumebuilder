@@ -250,3 +250,5 @@ Recommended stack:
 ---
 
 ✨ Built with ❤️ using MERN + Python + Google Gemini Pro
+
+![Dashboard Preview](https://raw.githubusercontent.com/rajpatel676/resumebuilder/main/image.png)
