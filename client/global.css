@@ -1,0 +1,327 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    /* Dark theme with gold accents */
+    --primary: #D4AF37; /* Gold */
+    --primary-rgb: 212, 175, 55;
+    --primary-foreground: #1A1A1A;
+
+    --secondary: #2A2A2A; /* Dark Gray */
+    --secondary-rgb: 42, 42, 42;
+    --secondary-foreground: #E1E1E1;
+
+    --accent: #FFB300; /* Amber for highlights */
+    --accent-rgb: 255, 179, 0;
+    --accent-foreground: #1A1A1A;
+
+    --destructive: #FF5722; /* Orange-Red for errors */
+    --destructive-rgb: 255, 87, 34;
+    --destructive-foreground: #FFFFFF;
+
+    --background: #1A1A1A; /* Dark Background */
+    --background-rgb: 26, 26, 26;
+    --foreground: #E1E1E1; /* Light text */
+    --foreground-rgb: 225, 225, 225;
+    
+    --card: #2A2A2A;
+    --card-foreground: #E1E1E1;
+
+    --popover: #2A2A2A;
+    --popover-foreground: #E1E1E1;
+
+    --muted: #3B3B3B;
+    --muted-foreground: #9E9E9E;
+
+    --border: #4A4A4A;
+    --input: #3B3B3B;
+    --ring: #D4AF37;
+    
+    --radius: 8px;
+    
+    /* Score colors */
+    --score-excellent: #34A853; /* Green 70+ */
+    --score-good: #FBBC04; /* Orange 40-70 */
+    --score-poor: #EA4335; /* Red <40 */
+  }
+
+  .dark {
+    --background: #1F1F1F;
+    --foreground: #E8EAED;
+    --card: #2D2E30;
+    --card-foreground: #E8EAED;
+    --popover: #2D2E30;
+    --popover-foreground: #E8EAED;
+    --primary: #4285F4;
+    --primary-foreground: #1F1F1F;
+    --secondary: #3C4043;
+    --secondary-foreground: #E8EAED;
+    --muted: #3C4043;
+    --muted-foreground: #9AA0A6;
+    --accent: #34A853;
+    --accent-foreground: #1F1F1F;
+    --destructive: #EA4335;
+    --destructive-foreground: #E8EAED;
+    --border: #5F6368;
+    --input: #5F6368;
+    --ring: #4285F4;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap');
+
+/* Typography */
+.font-heading {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Enhanced button components */
+.dark-gold-button {
+  @apply inline-flex items-center justify-center rounded px-6 py-3 text-sm font-medium transition-all duration-200;
+  background: linear-gradient(135deg, #D4AF37 0%, #FFB300 100%);
+  @apply text-black shadow-lg hover:shadow-xl;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
+  @apply disabled:opacity-50 disabled:pointer-events-none;
+  @apply transform hover:scale-105;
+}
+
+.google-button-outline {
+  @apply inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-medium transition-all duration-200;
+  @apply border border-gray-200 bg-white/50 backdrop-blur-sm text-gray-700;
+  @apply hover:bg-white/80 hover:border-purple-300 hover:text-purple-700;
+  @apply focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2;
+  @apply shadow-lg hover:shadow-xl;
+}
+
+.modern-button-primary {
+  @apply inline-flex items-center justify-center rounded-xl px-8 py-4 text-base font-semibold transition-all duration-300;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  @apply text-white shadow-xl hover:shadow-2xl;
+  @apply transform hover:scale-105 focus:scale-105;
+  @apply focus:outline-none focus:ring-4 focus:ring-purple-500/30;
+}
+
+.modern-button-secondary {
+  @apply inline-flex items-center justify-center rounded-xl px-8 py-4 text-base font-semibold transition-all duration-300;
+  @apply bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-700;
+  @apply hover:bg-white hover:border-purple-300 hover:text-purple-700;
+  @apply shadow-lg hover:shadow-xl transform hover:scale-105;
+}
+
+.google-input {
+  @apply flex h-12 w-full rounded-lg border border-input bg-background px-4 py-2 text-sm;
+  @apply placeholder:text-muted-foreground;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary;
+  @apply disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.google-card {
+  @apply rounded-lg border bg-card text-card-foreground shadow-sm;
+  @apply transition-shadow duration-200 hover:shadow-md;
+}
+
+.score-meter {
+  @apply relative inline-flex items-center justify-center w-32 h-32 rounded-full;
+}
+
+.score-excellent {
+  color: var(--score-excellent);
+  border-color: var(--score-excellent);
+}
+
+.score-good {
+  color: var(--score-good);
+  border-color: var(--score-good);
+}
+
+.score-poor {
+  color: var(--score-poor);
+  border-color: var(--score-poor);
+}
+
+/* Enhanced animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Toast notifications */
+.toast-success {
+  @apply bg-accent text-accent-foreground;
+}
+
+.toast-error {
+  @apply bg-destructive text-destructive-foreground;
+}
+
+.toast-warning {
+  @apply bg-score-good text-white;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .mobile-stack {
+    @apply flex-col;
+  }
+  
+  .mobile-full {
+    @apply w-full;
+  }
+}
+
+/* Accessibility */
+.focus-visible {
+  @apply outline-none ring-2 ring-primary/50 ring-offset-2;
+}
+
+/* Enhanced shadows for modern design */
+.google-shadow {
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.google-shadow-lg {
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+}
+
+.shadow-3xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Dark theme gradient backgrounds */
+.bg-gradient-dark-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #FFB300 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%);
+}
+
+.bg-gradient-dark-accent {
+  background: linear-gradient(135deg, #3B3B3B 0%, #2A2A2A 100%);
+}
+
+.bg-pattern-geometric {
+  background-image: radial-gradient(circle at 25px 25px, #D4AF37 2px, transparent 0), radial-gradient(circle at 75px 75px, #FFB300 2px, transparent 0);
+  background-size: 100px 100px;
+}
+
+/* Backdrop blur effects */
+.backdrop-blur-modern {
+  backdrop-filter: blur(12px) saturate(190%) contrast(70%) brightness(80%);
+}
+
+/* Dark solid card effects */
+.solid-dark-card {
+  background: #2A2A2A;
+  border: 2px solid #D4AF37;
+  box-shadow: 0 4px 6px rgba(212, 175, 55, 0.1);
+}
+
+.solid-dark-card-accent {
+  background: #3B3B3B;
+  border: 1px solid #FFB300;
+  box-shadow: 0 2px 4px rgba(255, 179, 0, 0.1);
+}
+
+/* Progress bars */
+.progress-bar {
+  @apply w-full bg-secondary rounded-full h-2 overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full rounded-full transition-all duration-1000 ease-out;
+}
+
+/* Section dividers */
+.section-divider {
+  @apply border-t border-border my-6;
+}
+
+/* Line clamp utilities for text truncation */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
